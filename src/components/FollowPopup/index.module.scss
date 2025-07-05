@@ -1,0 +1,97 @@
+.popup_sty {
+  :global {
+    .adm-popup-body {
+      //padding-top: 65px;
+      box-sizing: border-box;
+      background-color: unset;
+      height: 940px;
+    }
+  }
+
+  .popup_content {
+    width: 100%;
+    height: 100%;
+    background: #F5F5F5;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 38px 38px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;
+
+    .popup_title {
+      font-family: PingFang SC, PingFang SC;
+      font-weight: 600;
+      font-size: 36px;
+      color: #1A1A1A;
+      line-height: 30px;
+      text-align: left;
+      font-style: normal;
+      text-transform: none;
+      margin: 40px 0;
+    }
+
+    .follow_item_wrap {
+      width: 100%;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      background: #FFFFFF;
+      border-radius: 30px 30px 30px 30px;
+      margin-bottom: 20px;
+
+      .follow_icon {
+        width: 80px;
+        height: 80px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .follow_name {
+        flex: 1;
+        margin-left: 20px;
+        font-family: PingFang SC, PingFang SC;
+        font-weight: 600;
+        font-size: 28px;
+        color: #000000;
+        line-height: 28px;
+        text-align: left;
+        font-style: normal;
+        text-transform: none;
+      }
+
+      .follow_btn {
+        min-width: 122px;
+        padding: 0 15px;
+        height: 56px;
+        background: #23D09A;
+        border-radius: 112px 112px 112px 112px;
+
+        font-family: PingFang SC, PingFang SC;
+        font-weight: 600;
+        font-size: 24px;
+        color: #000000;
+        line-height: 56px;
+        text-align: center;
+        font-style: normal;
+        text-transform: none;
+      }
+      .follow_btn_inactive {
+        background: #d9d9d9;
+      }
+    }
+
+    .close_icon {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 44px;
+      height: 44px;
+      background: url("@/assets/images/home/close_icon.png") center no-repeat;
+      background-size: contain;
+    }
+  }
+}

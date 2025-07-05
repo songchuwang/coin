@@ -1,0 +1,81 @@
+
+
+@keyframes init_done {
+  to {
+    opacity: 0;
+    display: none;
+    z-index: -1;
+  }
+}
+
+
+
+.init_page {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1D3944;
+
+  .content_wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .top_wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .logo_img {
+        width: 140px;
+        height: 226px;
+        background: url("@/assets/images/init_logo_icon.png") center no-repeat;
+        background-size: cover;
+      }
+      .hint_text {
+        margin-top: 20px;
+        padding: 0 40px;
+        width: 100%;
+        text-align: center;
+        font-family: PingFang SC, PingFang SC;
+        font-weight: 400;
+        font-size: 28px;
+        color: rgba(255,255,255,0.4);
+        line-height: 40px;
+        font-style: normal;
+        text-transform: none;
+      }
+    }
+
+    .progress_bar_box {
+      width: 360px;
+      height: 10px;
+      background: rgba(29,184,255,0.1);
+      border-radius: 30px 30px 30px 30px;
+      overflow: hidden;
+      .progress_active {
+        width: 0;
+        height: 100%;
+        background: #23D09A;
+        border-radius: 30px 30px 30px 30px;
+        transition: .8s width;
+      }
+    }
+
+  }
+}
+
+.init_done {
+  animation-name: init_done;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+

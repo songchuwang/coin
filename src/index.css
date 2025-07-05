@@ -1,0 +1,103 @@
+
+* {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+}
+
+body, html {
+  /*line-height: 1.5;*/
+  margin: 0;
+  padding: 0;
+}
+body, html {
+  width: 100%;
+  background-color: #000000;
+}
+html {
+  @apply h-auto overflow-hidden;
+}
+.html {
+  @apply h-auto overflow-hidden;
+}
+body {
+  @apply min-h-screen h-screen overflow-hidden isolate;
+  height: 100vh;
+  overflow: hidden;
+}
+#root {
+  width: 100%;
+  height: 100%;
+  padding: unset;
+  margin: unset;
+}
+
+.go823957079 {
+  z-index: 9999;
+}
+
+.s-enter-active {
+  z-index: 9999 !important;
+}
+
+.s-enter-to {
+  z-index: 9999 !important;
+}
+
+.ant-message {
+  top: 36px !important;
+  font-size: 24px !important;
+}
+
+.ant-message-notice-content {
+  border-radius: 15px !important;
+}
+
+.ant-message .anticon {
+  font-size: 30px !important;
+}
+
+.logo_icon {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  margin-top: 9px;
+  margin-right: 10px;
+  background: url("@/assets/images/coin_icon.png") center no-repeat;
+  background-size: contain;
+}
+.num_coin {
+  font-size: 35px;
+  color: #ee7b1d;
+//text-shadow: -1px 0 0 #7a2806, 0 -1px 0 #7a2806, -1px 1px 0 #7a2806, 1px 1px 0 #7a2806, 0 2px 0 #7a2806;
+}
+
+.hint_text_amount {
+  font-size: 45px;
+  font-weight: 800;
+}
+
+.ant-modal-close-x {
+  display: none !important;
+}
+.ant-modal-content {
+  background-color: unset !important;
+}
+.ant-modal-mask {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+.ant-modal {
+  width: unset !important;
+  /*padding: 0 90px !important;*/
+}
+.ant-modal-body {
+  padding: 0 !important;
+}
+
+.app-style {
+  /*padding-bottom: 140px;*/
+}
+
+.prize_pool_num {
+  color: #E8D259;
+  font-size: 42px;
+}

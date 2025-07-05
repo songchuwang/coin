@@ -1,0 +1,95 @@
+
+
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden auto;
+  background-color: #000000;
+  padding: 0 30px;
+
+  .bg_float {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 630px;
+    background: radial-gradient(50% 100% at 41% -22%, rgba(142, 255, 111, 0.31) 0%, rgba(26, 41, 22, 0) 100%),
+    radial-gradient(50% 106% at -65% 4%, rgba(129, 255, 255, 0.41) 0%, rgba(0, 0, 0, 0) 97%),
+    radial-gradient(50% 105% at 15% -9%, rgba(31, 43, 37, 0.48) 0%, rgba(13, 36, 11, 0) 100%);
+  }
+
+  .header_wrap {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    height: 88px;
+    line-height: 88px;
+    span {
+      font-family: PingFang SC, PingFang SC;
+      font-weight: 600;
+      font-size: 36px;
+      color: #FFFFFF;
+      text-align: center;
+      font-style: normal;
+      text-transform: none;
+    }
+  }
+
+  .content_wrap {
+    position: relative;
+    width: 100%;
+
+    .language_item {
+      width: 100%;
+      height: 94px;
+      border-bottom: 1px solid #292929;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .text {
+        font-family: PingFang SC, PingFang SC;
+        font-weight: 400;
+        font-size: 28px;
+        color: #FFFFFF;
+        line-height: 28px;
+        text-align: left;
+        font-style: normal;
+        text-transform: none;
+      }
+      .select_icon {
+        width: 36px;
+        height: 36px;
+        background: url("@/assets/images/check_icon.png") center no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+
+  .confirm_btn {
+    margin-top: 80px;
+    width: 100%;
+    height: 90px;
+    background: #23D09A;
+    border-radius: 45px 45px 45px 45px;
+    border: unset;
+    box-shadow: unset;
+    span {
+      font-family: PingFang SC, PingFang SC;
+      font-weight: 600;
+      font-size: 30px;
+      color: #000000;
+      //line-height: 40px;
+      //text-align: left;
+      font-style: normal;
+      text-transform: none;
+    }
+  }
+
+  :global {
+    .ant-btn:hover {
+      background: #23D09A;
+    }
+  }
+}

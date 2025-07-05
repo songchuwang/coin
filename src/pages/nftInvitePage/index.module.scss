@@ -1,0 +1,346 @@
+
+.page {
+  position: relative;
+  width: 100%;
+  //padding-bottom: 72px + 128px;
+  //min-height: 100vh;
+  min-height: 100vh;
+  padding: 20px 30px 0;
+
+  .header_wrap {
+    width: 100%;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .header_tag_wrap {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+      justify-content: space-between;
+      .page_name {
+        flex: 1;
+        font-family: PingFang SC, PingFang SC;
+        font-weight: 600;
+        font-size: 36px;
+        color: #ffffff;
+        line-height: 40px;
+        text-align: center;
+        font-style: normal;
+        text-transform: none;
+      }
+      .header_tag {
+        padding: 0 20px;
+        background-color: #39C160;
+        border-radius: 30px;
+        height: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          font-family: PingFang SC, PingFang SC;
+          font-weight: 500;
+          font-size: 30px;
+          color: #fff;
+          text-align: left;
+          font-style: normal;
+          text-transform: none;
+        }
+      }
+    }
+
+    .info_icon {
+      position: absolute;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      background: url("@/assets/images/home/info_icon.png") center no-repeat;
+      background-size: contain;
+    }
+  }
+
+  .content_wrap {
+    width: 100%;
+    margin-top: 30px;
+    .service_item {
+      //display: none;
+      width: 100%;
+      margin: 0 10px 20px;
+      //padding: 15px 0;
+      padding: 40px 30px 30px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 30px;
+      position: relative;
+      flex-shrink: 0;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      .u_c_i_top {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .svip_img {
+          width: 240px;
+          height: 240px;
+          border-radius: 20px 20px 20px 20px;
+          overflow: hidden;
+          //background: #00b578;
+          //position: relative;
+
+          .tag_wrap {
+            top: 0;
+            right: 0;
+            position: absolute;
+            min-width: 86px;
+            height: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            .hot_label_img {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              object-fit: fill;
+            }
+            span {
+              margin-top: -4px;
+              margin-right: -8px;
+              position: relative;
+              font-family: PingFang SC, PingFang SC;
+              font-weight: 600;
+              font-size: 24px;
+              color: #FFFFFF;
+              line-height: 24px;
+              text-align: left;
+              font-style: normal;
+              text-transform: none;
+            }
+          }
+        }
+        .top_right_wrap {
+          flex: 1;
+          margin-left: 22px;
+          .title_wrap {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1px;
+            .diamond_icon {
+              width: 34px;
+              height: 34px;
+              background: url("@/assets/images/accelerate/diamond_icon.png") center no-repeat;
+              background-size: contain;
+            }
+            .title_text {
+              margin-left: 6px;
+              font-family: PingFang SC, PingFang SC;
+              font-weight: 600;
+              font-size: 32px;
+              color: #FFFFFF;
+              line-height: 40px;
+              text-align: left;
+              font-style: normal;
+              text-transform: none;
+            }
+          }
+          .hint_text_wrap {
+            margin-top: 12px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .hint_label {
+              font-family: PingFang SC, PingFang SC;
+              font-weight: 400;
+              font-size: 25px;
+              color: #A1A9AC;
+              line-height: 30px;
+              text-align: left;
+              font-style: normal;
+              text-transform: none;
+            }
+            .hint_label_l2 {
+              font-size: 22px;
+            }
+            .hint_value {
+              font-family: PingFang SC, PingFang SC;
+              font-weight: 400;
+              font-size: 28px;
+              color: #FFFFFF;
+              line-height: 30px;
+              text-align: right;
+              font-style: normal;
+              text-transform: none;
+            }
+          }
+        }
+      }
+
+      .bottom_hint_wrap {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+        .hint_text_1 {
+          font-family: PingFang SC, PingFang SC;
+          font-weight: 600;
+          font-size: 30px;
+          color: #fff;
+          text-align: left;
+          font-style: normal;
+          text-transform: none;
+        }
+        .hint_text_2 {
+          font-family: PingFang SC, PingFang SC;
+          font-weight: 600;
+          font-size: 50px;
+          color: #23D09A;
+          text-align: left;
+          font-style: normal;
+          text-transform: none;
+        }
+      }
+    }
+
+    .invite_url_wrap {
+      width: 100%;
+      margin-top: 60px;
+      background: rgba(17,17,17,0.3);
+      border-radius: 40px 40px 40px 40px;
+      padding: 28px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .invite_url_text {
+        flex: 1;
+        word-break: break-word;
+        font-family: PingFang SC, PingFang SC;
+        font-weight: 400;
+        font-size: 30px;
+        color: #FFFFFF;
+        line-height: 40px;
+        text-align: left;
+        font-style: normal;
+        text-transform: none;
+      }
+      .copy_btn {
+        min-width: 115px;
+        padding: 0 10px;
+        height: 100px;
+        background: #23D09A;
+        border-radius: 20px 20px 20px 20px;
+        font-family: PingFang SC, PingFang SC;
+        font-weight: 600;
+        font-size: 30px;
+        color: #000000;
+        line-height: 100px;
+        text-align: center;
+        font-style: normal;
+        text-transform: none;
+      }
+    }
+
+    .invite_btn {
+      margin-top: 60px;
+      width: 100%;
+      height: 80px;
+      background: #23D09A;
+      border-radius: 20px;
+      font-family: PingFang SC, PingFang SC;
+      font-weight: 600;
+      font-size: 28px;
+      color: #000000;
+      line-height: 80px;
+      text-align: center;
+      font-style: normal;
+      text-transform: none;
+    }
+
+    .invite_rule_wrap {
+      width: 100%;
+      margin-top: 20px;
+
+      .rule_text {
+        margin-top: 10px;
+        font-family: PingFang SC, PingFang SC;
+        font-weight: 400;
+        font-size: 24px;
+        color: rgba(255,255,255,0.5);
+        line-height: 28px;
+        text-align: left;
+        font-style: normal;
+        text-transform: none;
+      }
+    }
+  }
+
+  .loading_wrapper {
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 43px;
+    color: #23D09A;
+  }
+
+}
+
+.modal_content {
+  width: 570px;
+  background: #FFFFFF;
+  border-radius: 30px 30px 30px 30px;
+  padding: 40px 47px 50px;
+
+  .title_wrap {
+    width: 100%;
+    text-align: center;
+    font-family: PingFang SC, PingFang SC;
+    font-weight: 600;
+    font-size: 32px;
+    color: #000000;
+    line-height: 48px;
+    font-style: normal;
+    text-transform: none;
+  }
+
+  .content_text {
+    margin-top: 40px;
+    font-family: PingFang SC, PingFang SC;
+    font-weight: 400;
+    font-size: 28px;
+    color: #171E26;
+    line-height: 42px;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+  }
+
+  .determine_btn {
+    margin-top: 40px;
+    width: 462px;
+    height: 80px;
+    background: #23D09A;
+    border-radius: 40px;
+
+    font-family: PingFang SC, PingFang SC;
+    font-weight: 400;
+    font-size: 30px;
+    color: #000000;
+    line-height: 80px;
+    text-align: center;
+    font-style: normal;
+    text-transform: none;
+  }
+
+}

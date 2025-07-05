@@ -1,0 +1,406 @@
+
+.page {
+  position: relative;
+  width: 100%;
+  //padding-bottom: 72px + 128px;
+  min-height: 100vh;
+  //padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .header_wrap {
+    width: 100%;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      font-family: PingFang SC, PingFang SC;
+      font-weight: 600;
+      font-size: 40px;
+      color: #FFFFFF;
+      line-height: 40px;
+      text-align: center;
+      font-style: normal;
+      text-transform: none;
+    }
+  }
+
+  .content_wrap {
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
+
+    .pic_wrap {
+      width: 750px;
+      //display: flex;
+      //align-items: center;
+      //justify-content: center;
+      //justify-content: space-between;
+      overflow: auto hidden;
+      padding: 0 15px;
+      white-space: nowrap;
+      .pic_item_wrap {
+        width: 330px;
+        //height: 280px;
+        flex-shrink: 0;
+        margin: 20px 15px;
+        background: rgba(0,0,0,0.05);
+        border-radius: 30px 30px 30px 30px;
+        border: 1px solid rgba(35,208,154,0.2);
+        position: relative;
+        display: inline-block;
+        //display: flex;
+        //align-items: center;
+        //flex-direction: column;
+        //justify-content: center;
+        transition: .2s all;
+        .top_left_border {
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          width: 50px;
+          height: 50px;
+          background: url("@/assets/images/node/top_left_border_icon.png") center no-repeat;
+          background-size: contain;
+        }
+        .bottom_right_border {
+          position: absolute;
+          right: -1px;
+          bottom: -1px;
+          width: 50px;
+          height: 50px;
+          background: url("@/assets/images/node/bottom_right_border_icon.png") center no-repeat;
+          background-size: contain;
+        }
+
+        .img_box {
+          margin: 15px auto 0;
+          transition: .2s all;
+          width: 160px;
+          height: 160px;
+          border-radius: 20px;
+          overflow: hidden;
+        }
+        .label_text {
+          margin-top: 15px;
+          font-family: PingFang SC, PingFang SC;
+          font-weight: 400;
+          font-size: 24px;
+          color: #FFFFFF;
+          line-height: 40px;
+          text-align: center;
+          font-style: normal;
+          text-transform: none;
+        }
+      }
+      .pic_item_wrap_active {
+        background-color: rgba(35,208,154,0.1);
+        border: 2px solid rgba(35,208,154,0.6);
+        .img_box {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+
+
+    .buy_info_content_wrap {
+      padding: 0 30px;
+
+      .buy_info_left_right_wrap {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .buy_info_wrap {
+          .b_i_left_wrap {
+            width: 150px;
+          }
+        }
+        .left_right_sized {
+          width: 30px;
+        }
+      }
+    }
+    .page_hint_text {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-family: PingFang SC, PingFang SC;
+      font-weight: 400;
+      font-size: 24px;
+      color: rgba(255,255,255,0.6);
+      line-height: 40px;
+      text-align: left;
+      font-style: normal;
+      text-transform: none;
+    }
+
+    .buy_info_wrap {
+
+      margin-top: 24px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 30px;
+      height: 100px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 20px 20px 20px 20px;
+      .b_i_left_wrap {
+        display: flex;
+        align-items: center;
+        .label_left_text {
+          width: 170px;
+          height: 80px;
+          font-family: PingFang SC, PingFang SC;
+          font-weight: 600;
+          font-size: 30px;
+          color: #FFFFFF;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          font-style: normal;
+          text-transform: none;
+        }
+        .label_left_auto_with {
+          width: auto;
+          padding: 0 10px;
+        }
+        .line_box {
+          width: 2px;
+          height: 50px;
+          background: rgba(255,255,255,0.1);
+          border-radius: 0px 0px 0px 0px;
+        }
+      }
+      .b_i_right_wrap {
+        display: flex;
+        align-items: center;
+        .import_value_text {
+          font-family: PingFang SC, PingFang SC;
+          font-weight: 400;
+          font-size: 30px;
+          color: #F7C82F;
+          line-height: 42px;
+          text-align: right;
+          font-style: normal;
+          text-transform: none;
+        }
+        .right_icon {
+          margin-left: 10px;
+          width: 20px;
+          height: 20px;
+          background: url("@/assets/images/node/right_icon.png") center no-repeat;
+          background-size: contain;
+        }
+        .other_text {
+          font-family: PingFang SC, PingFang SC;
+          font-weight: 400;
+          font-size: 30px;
+          color: #FFFFFF;
+          line-height: 42px;
+          text-align: right;
+          font-style: normal;
+          text-transform: none;
+        }
+        .sub_icon {
+          margin-right: 29px;
+          width: 44px;
+          height: 44px;
+          background: url("@/assets/images/node/sub_icon.png") center no-repeat;
+          background-size: contain;
+        }
+        .add_icon {
+          margin-left: 29px;
+          width: 44px;
+          height: 44px;
+          background: url("@/assets/images/node/add_icon.png") center no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+
+    .wallet_balance {
+      margin-top: 20px;
+      width: 100%;
+      font-family: PingFang SC, PingFang SC;
+      font-weight: 400;
+      font-size: 24px;
+      color: rgba(255,255,255,0.6);
+      line-height: 40px;
+      text-align: left;
+      font-style: normal;
+      text-transform: none;
+    }
+    .button_wrap {
+      width: 100%;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .buy_btn {
+        width: 100%;
+        height: 90px;
+        background: #23D09A;
+        //border-radius: 45px 45px 45px 45px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          font-family: PingFang SC, PingFang SC;
+          font-weight: 600;
+          font-size: 30px;
+          color: #000000;
+          line-height: 40px;
+          text-align: center;
+          font-style: normal;
+          text-transform: none;
+        }
+      }
+      .deposit_btn {
+        padding: 0 15px;
+        width: 100%;
+        margin-top: 20px;
+        height: 90px;
+        background: #23D09A;
+        //border-radius: 45px 45px 45px 45px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          font-family: PingFang SC, PingFang SC;
+          font-weight: 600;
+          font-size: 30px;
+          color: #000000;
+          line-height: 40px;
+          text-align: center;
+          font-style: normal;
+          text-transform: none;
+        }
+      }
+
+      .buy_btn_inactive {
+        background-color: #53585b5a;
+        span {
+          color: #ffffff;
+        }
+      }
+    }
+
+  }
+
+  .loading_wrapper {
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 43px;
+    color: #23D09A;
+  }
+}
+
+.modal_content_2 {
+  width: 550px;
+  margin-top: -130px;
+  background: linear-gradient(180deg, #FFB13C, #FFE89E);
+  border-radius: 30px;
+  .modal_content_2_box {
+    width: 100%;
+    padding: 62px 30px 80px;
+    border-radius: 30px;
+    background: url("@/assets/images/prizePool/img_bg.png") center no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .m_gen_icon {
+      width: 140px;
+      height: 140px;
+      background: url("@/assets/images/prizePool/gen_icon.png") center no-repeat;
+      background-size: contain;
+    }
+
+    .m_title {
+      margin-top: 40px;
+      font-family: PingFang SC, PingFang SC;
+      font-weight: 600;
+      font-size: 40px;
+      color: #AD4C1F;
+      line-height: 56px;
+      text-align: center;
+      font-style: normal;
+      text-transform: none;
+    }
+    .m_sub_title {
+      margin-top: 24px;
+      font-family: PingFang SC, PingFang SC;
+      font-weight: 400;
+      font-size: 32px;
+      color: #AE4B21;
+      line-height: 60px;
+      text-align: center;
+      font-style: normal;
+      text-transform: none;
+    }
+    .m_amount_text {
+      font-family: PingFang SC, PingFang SC;
+      font-size: 90px;
+      font-weight: 700;
+      font-style: normal;
+      text-transform: none;
+    }
+    .m_w_btn {
+      margin-top: 60px;
+      width: 100%;
+      height: 88px;
+      background: #350D02;
+      border-radius: 43px 43px 43px 43px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: HarmonyOS Sans SC, HarmonyOS Sans SC;
+      font-weight: 500;
+      font-size: 32px;
+      color: #fff;
+      line-height: 40px;
+      text-align: center;
+      font-style: normal;
+      text-transform: none;
+    }
+    .m_d_btn {
+      margin-top: 40px;
+      width: 462px;
+      height: 80px;
+      background: #23D09A;
+      border-radius: 40px;
+
+      font-family: PingFang SC, PingFang SC;
+      font-weight: 400;
+      font-size: 30px;
+      color: #000000;
+      line-height: 80px;
+      text-align: center;
+      font-style: normal;
+      text-transform: none;
+    }
+    .m_hint_text {
+      margin-top: 32px;
+      font-family: PingFang SC, PingFang SC;
+      font-weight: 400;
+      font-size: 26px;
+      color: rgba(0,0,0,0.6);
+      line-height: 48px;
+      text-align: left;
+      font-style: normal;
+      text-transform: none;
+    }
+  }
+}

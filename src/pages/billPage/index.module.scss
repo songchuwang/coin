@@ -1,0 +1,135 @@
+
+.page {
+  position: relative;
+  width: 100%;
+  //padding-bottom: 72px + 128px;
+  //min-height: 100vh;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .header_wrap {
+    width: 100%;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      font-family: PingFang SC, PingFang SC;
+      font-weight: 600;
+      font-size: 40px;
+      color: #FFFFFF;
+      line-height: 40px;
+      text-align: center;
+      font-style: normal;
+      text-transform: none;
+    }
+  }
+
+  .tab_wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .tab_item {
+      width: 330px;
+      height: 80px;
+      background: rgba(17,17,17,0.3);
+      border-radius: 20px 20px 20px 20px;
+
+      font-family: PingFang SC, PingFang SC;
+      font-weight: 600;
+      font-size: 30px;
+      color: #FFFFFF;
+      line-height: 80px;
+      text-align: center;
+      font-style: normal;
+      text-transform: none;
+      transition: .2s all;
+    }
+    .tab_item_active {
+      background: #23D09A;
+    }
+  }
+
+  .list_box {
+    flex: 1;
+    width: 100%;
+    overflow: hidden auto;
+    //padding: 0 30px;
+
+    .date_coin_item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 32px 0 32px;
+      border-bottom: 1px solid #FFFFFF23;
+      .coin_icon {
+        width: 52px;
+        height: 52px;
+      }
+      .date_coin_info_wrap {
+        margin-left: 10px;
+        .coin_title {
+          font-family: PingFang SC, PingFang SC;
+          font-weight: 400;
+          font-size: 28px;
+          color: #FFFFFF;
+          line-height: 39px;
+          text-align: left;
+          font-style: normal;
+          text-transform: none;
+        }
+        .coin_date {
+          margin-top: 6px;
+          font-family: PingFang SC, PingFang SC;
+          font-weight: 400;
+          font-size: 24px;
+          color: #999999;
+          line-height: 34px;
+          text-align: left;
+          font-style: normal;
+          text-transform: none;
+        }
+      }
+      .coin_action_wrap {
+        margin-left: auto;
+        .coin_num {
+          font-family: PingFang SC, PingFang SC;
+          font-weight: 400;
+          font-size: 28px;
+          color: #FFFFFF;
+          line-height: 39px;
+          text-align: right;
+          font-style: normal;
+          text-transform: none;
+        }
+        .coin_util {
+          margin-top: 7px;
+          font-family: PingFang SC, PingFang SC;
+          font-weight: 400;
+          font-size: 24px;
+          color: #999999;
+          line-height: 34px;
+          text-align: right;
+          font-style: normal;
+          text-transform: none;
+        }
+      }
+    }
+
+  }
+}
+
+.loading_wrapper {
+  width: 100%;
+  height: 30px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 43px;
+  color: #23D09A;
+}

@@ -1,0 +1,39 @@
+.page {
+  position: relative;
+  width: 100%;
+  //padding-bottom: 72px + 128px;
+  min-height: 100vh;
+  padding: 30px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+
+  h1, h2 {
+    font-family: "Nunito", sans-serif;
+    color: #f3f3f3;
+    font-size: 32px;
+  }
+  h1 {
+    text-align: center;
+  }
+  section {
+    margin-bottom: 20px;
+  }
+  p {
+    font-family: "Nunito", sans-serif;
+    color: #f3f3f3;
+    font-size: 25px;
+  }
+  ul {
+    //margin-left: 20px;
+    font-size: 25px;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #ffffff;
+  }
+
+}

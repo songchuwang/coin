@@ -1,0 +1,36 @@
+
+.image_wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .image_box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    :global {
+      .ant-image-img {
+        transition: .3s all;
+        transform: scale(1);
+
+      }
+    }
+  }
+  .skeleton_box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
