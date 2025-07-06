@@ -45,6 +45,16 @@ export default defineConfig((config): UserConfig => {
       port: 3006,
       host: true,
       open: true,
+      proxy: {
+        '/app-api': {
+          target: 'http://107.148.47.105:48080',
+          changeOrigin:true
+        },
+        '/admin-api': {
+          target: 'http://107.148.47.105:48080',
+          changeOrigin:true
+        },
+      }
       // proxy: createProxy(localEnv.VITE_APP_BASE_API, localEnv.VITE_APP_URL),
     },
     plugins: [

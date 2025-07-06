@@ -16,6 +16,8 @@ import BillPage from "@/pages/billPage";
 import TeamRecordPage from "@/pages/teamRecordPage";
 import InvitePage from "@/pages/invitePage";
 import IntroductionPage from "@/pages/introductionPage";
+import InviteDetail from "@/pages/inviteDetail";
+import InviteNewPage from "@/pages/inviteNewPage";
 import Wallet from "@/pages/wallet";
 import LotteryPage from "@/pages/lotteryPage";
 import MiningRecords from "@/pages/miningRecords";
@@ -113,6 +115,14 @@ export default [
   {
     path: '/introductionPage',
     element: <IntroductionPage />
+  },
+  {
+    path: '/inviteNewPage/inviteDetail',
+    element: <InviteDetail />
+  },
+  {
+    path: '/inviteNewPage',
+    element: <InviteNewPage />
   },
   {
     path: '/wallet',

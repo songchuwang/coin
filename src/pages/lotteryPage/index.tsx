@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import styles from './index.module.scss';
 import PageHeader from "../../components/PageHeader";
 const handleBack = () => {
-  window.history.back();
-  // 或使用路由导航: navigate(-1) (react-router v6)
+    window.history.back();
+    // 或使用路由导航: navigate(-1) (react-router v6)
 };
 const LotteryPage = () => {
     // 状态管理
@@ -176,76 +176,77 @@ const LotteryPage = () => {
 
     return (
         <>
-        <PageHeader
-        title=""
-        onBack={handleBack}
-        backgroundColor="#030B20"
-        textColor="white"
-      />
-        <div className={styles.lotteryPage}>
-            {/* 顶部标题 */}
-            <div className={styles.header}>
-                <h1>天天抽奖转不停</h1>
-            </div>
+            <PageHeader
+                title=""
+                onBack={handleBack}
+                backgroundColor="#030B20"
+                textColor="white"
+            />
+            <div className={styles.lotteryPage}>
+                {/* 顶部标题 */}
+                <div className={styles.header}>
+                    <h1>天天抽奖转不停</h1>
+                </div>
 
-            {/* 抽奖区域 - 九宫格布局 */}
-            <div className={styles.wheelSection}>
-                <div className={styles.gridContainer}>
-                    {renderGrid()}
-                </div>
-            </div>
-
-            {/* 积分和次数显示 */}
-            <div className={styles.balanceInfo}>
-                <div className={styles.balance}>
-                    <span className={styles.label}>积分余额:</span>
-                    <span className={styles.value}>{balance}</span>
-                </div>
-                <div className={styles.drawTimes}>
-                    <span className={styles.label}>还可抽取</span>
-                    <span className={styles.value}>{remaining}</span>
-                    <span className={styles.label}>次</span>
-                </div>
-            </div>
-
-            {/* 抽奖记录 */}
-            <div className={styles.historySection}>
-                <div className={styles.tableHeader}>
-                    <div className={styles.headerCell}>时间</div>
-                    <div className={styles.headerCell}>用户</div>
-                    <div className={styles.headerCell}>奖品</div>
-                </div>
-                <div className={styles.tableBody}>
-                    {history.map(record => (
-                        <div key={record.id} className={styles.tableRow}>
-                            <div className={styles.bodyCell}>{record.time}</div>
-                            <div className={styles.bodyCell}>{record.username}</div>
-                            <div className={`${styles.bodyCell} ${styles.prizeCell}`}>{record.prize}</div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* 结果弹窗 */}
-            {showResult && (
-                <div className={styles.resultOverlay} onClick={closeResult}>
-                    <div className={styles.resultModal} onClick={(e) => e.stopPropagation()}>
-                        <h2>恭喜您获得</h2>
-                        <div className={styles.prizeValue}>{currentPrize}</div>
-                        <div className={styles.resultInfo}>
-                            <span>{new Date().toLocaleDateString('zh-CN', {
-                                month: '2-digit',
-                                day: '2-digit',
-                                hour: '2-digit',
-                                minute: '2-digit'
-                            })}</span>
-                            <span>@YOU</span>
-                        </div>
-                        <button className={styles.confirmButton} onClick={closeResult}>继续抽奖</button>
+                {/* 抽奖区域 - 九宫格布局 */}
+                <div className={styles.wheelSection}>
+                    <div className={styles.gridContainer}>
+                        {renderGrid()}
                     </div>
                 </div>
-            )}
-        </div>
+
+                {/* 积分和次数显示 */}
+                <div className={styles.balanceInfo}>
+                    <div className={styles.balance}>
+                        <span className={styles.label}>积分余额:</span>
+                        <span className={styles.value}>{balance}</span>
+                    </div>
+                    <div className={styles.drawTimes}>
+                        <span className={styles.label}>还可抽取</span>
+                        <span className={styles.value}>{remaining}</span>
+                        <span className={styles.label}>次</span>
+                    </div>
+                </div>
+
+                {/* 抽奖记录 */}
+                <div className={styles.historySection}>
+                    <div className={styles.tableHeader}>
+                        <div className={styles.headerCell}>时间</div>
+                        <div className={styles.headerCell}>用户</div>
+                        <div className={styles.headerCell}>奖品</div>
+                    </div>
+                    <div className={styles.tableBody}>
+                        {history.map(record => (
+                            <div key={record.id} className={styles.tableRow}>
+                                <div className={styles.bodyCell}>{record.time}</div>
+                                <div className={styles.bodyCell}>{record.username}</div>
+                                <div className={`${styles.bodyCell} ${styles.prizeCell}`}>{record.prize}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                
+
+                {/* 结果弹窗 */}
+                {showResult && (
+                    <div className={styles.resultOverlay} onClick={closeResult}>
+                        <div className={styles.resultModal} onClick={(e) => e.stopPropagation()}>
+                            <h2>恭喜您获得</h2>
+                            <div className={styles.prizeValue}>{currentPrize}</div>
+                            <div className={styles.resultInfo}>
+                                <span>{new Date().toLocaleDateString('zh-CN', {
+                                    month: '2-digit',
+                                    day: '2-digit',
+                                    hour: '2-digit',
+                                    minute: '2-digit'
+                                })}</span>
+                                <span>@YOU</span>
+                            </div>
+                            <button className={styles.confirmButton} onClick={closeResult}>继续抽奖</button>
+                        </div>
+                    </div>
+                )}
+            </div>
         </>
     );
 };

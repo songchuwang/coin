@@ -85,7 +85,7 @@ const Home = () => {
       key: 3,
       name: 'ranking-icon',
       iconPath: './img/home/ranking-icon.png',
-      navigatePath:''
+      navigatePath:'/inviteNewPage'
     },
   ], [
     {
