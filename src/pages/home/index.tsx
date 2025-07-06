@@ -1,16 +1,16 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import styles from "./index.module.scss"
-import {message, Modal} from "antd";
-import {useNavigate} from "react-router-dom";
+import { message, Modal } from "antd";
+import { useNavigate } from "react-router-dom";
 import homeAnimation from "@/assets/animation/homeAnimation.json"
 import rankAnimation from "@/assets/animation/rankAnimation.json"
 import Lottie from "react-lottie";
-import {useTranslation} from "react-i18next";
-import {useSelector} from "react-redux";
-import {UserAuthDataType, UserInfoDataType} from "@/redux/reducers/user/userInfo.ts";
-import {MiningInfoType, MiningStateType} from "@/redux/reducers/user/miningInfo.ts";
-import {numberFormatToEnglish} from "@/utils/numFormat.ts";
-import {useMining} from "@/hooks/useMining.ts";
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { UserAuthDataType, UserInfoDataType } from "@/redux/reducers/user/userInfo.ts";
+import { MiningInfoType, MiningStateType } from "@/redux/reducers/user/miningInfo.ts";
+import { numberFormatToEnglish } from "@/utils/numFormat.ts";
+import { useMining } from "@/hooks/useMining.ts";
 import useDispatchAction from "@/hooks/useDispatchAction.ts";
 import {
   resetMiningState, setActivityState,
@@ -29,16 +29,16 @@ import {
   APITaskList
 } from "@/api";
 import FollowPopup from "@/components/FollowPopup";
-import {RewardTaskLItemType, TaskItemType, TeamInfoDataType} from "@/types";
-import {getTelegramWebApp} from "@/tools/telegram.ts";
-import {formatPriceIfUsdt, formatUnitByCurrency} from "@/utils/textUtils.ts";
-import {MAIN_CURRENCY_COIN} from "@/config/appConfig.ts";
-const Home = ()  => {
-  const {t}: { t: (key: string, value?: any) => string }  = useTranslation()
+import { RewardTaskLItemType, TaskItemType, TeamInfoDataType } from "@/types";
+import { getTelegramWebApp } from "@/tools/telegram.ts";
+import { formatPriceIfUsdt, formatUnitByCurrency } from "@/utils/textUtils.ts";
+import { MAIN_CURRENCY_COIN } from "@/config/appConfig.ts";
+const Home = () => {
+  const { t }: { t: (key: string, value?: any) => string } = useTranslation()
 
   const { startTiming } = useMining()
 
-  const dispatch = useDispatchAction({ setLoadingModalVis, setMiningData, resetMiningState, setAssetsState, setTaskList, setFollowedList, setActivityState})
+  const dispatch = useDispatchAction({ setLoadingModalVis, setMiningData, resetMiningState, setAssetsState, setTaskList, setFollowedList, setActivityState })
 
   const userAuthData: UserAuthDataType = useSelector((state: any) => state.user.userInfo.userAuthData)
   const userInfoData: UserInfoDataType = useSelector((state: any) => state.user.userInfo.userInfo)
@@ -59,6 +59,83 @@ const Home = ()  => {
   const [followVis, setFollowVis] = useState(false)
 
   const [downloadRewardVis, setDownloadRewardVis] = useState(false)
+
+  const homeIconList = [[
+    {
+      key: 0,
+      name: 'diamond-icon',
+      iconPath: './img/home/diamond-icon.png',
+      navigatePath:''
+    },
+    {
+      key: 1,
+      name: 'gift-icon',
+      iconPath: './img/home/gift-icon.png',
+      // navigatePath:'Lotterypage'
+      navigatePath:'/lotteryPage'
+    },
+  ], [
+    {
+      key: 2,
+      name: 'lightning-icon',
+      iconPath: './img/home/lightning-icon.png',
+      navigatePath:''
+    },
+    {
+      key: 3,
+      name: 'ranking-icon',
+      iconPath: './img/home/ranking-icon.png',
+      navigatePath:''
+    },
+  ], [
+    {
+      key: 4,
+      name: 'record-icon',
+      iconPath: './img/home/record-icon.png',
+      navigatePath:'/miningRecords'
+    },
+    {
+      key: 5,
+      name: 'video-icon',
+      iconPath: './img/home/video-icon.png',
+      navigatePath:''
+    },
+  ]]
+
+  const taskListData = [
+    {
+      key: 0,
+      title: 'Join the Telegram group',
+      desc:'Register now to receive 1000USDT',
+      iconPath: './img/home/telegram-icon.png',
+      tips:'+1000USDT',
+      navigate:''
+    },
+    {
+      key: 1,
+      title: 'Follow xcoin to claim rewards',
+      desc:'Reward Task',
+      iconPath: './img/home/facebook-icon.png',
+      tips:'',
+      navigate:''
+    },
+    {
+      key: 2,
+      title: 'Invite the A-level team reward',
+      desc:'Ladder Tasks',
+      iconPath: './img/home/mining-pool​-icon.png',
+      tips:'',
+      navigate:''
+    },
+    {
+      key: 3,
+      title: 'Join the Telegram group',
+      desc:'Register now to receive 1000USDT',
+      iconPath: './img/home/yotube-icon.png',
+      tips:'',
+      navigate:''
+    },
+  ]
 
   const [taskState, setTaskState] = useState({
     follow: {
@@ -199,7 +276,7 @@ const Home = ()  => {
     })
   }
 
-  const onSignInClick= (item) => {
+  const onSignInClick = (item) => {
     if (item.isDone) {
       message.info(t('sign_hint_done_message'))
       return
@@ -207,7 +284,7 @@ const Home = ()  => {
     dispatch.setLoadingModalVis(true)
     APITaskDone(item.id).then(resp => {
       if (resp.code === 0) {
-        message.success(t('task_reward_message', {amount: item.profit, currency: MAIN_CURRENCY_COIN}))
+        message.success(t('task_reward_message', { amount: item.profit, currency: MAIN_CURRENCY_COIN }))
         fetchTaskList()
         fetchAsste()
       } else {
@@ -248,7 +325,7 @@ const Home = ()  => {
     dispatch.setLoadingModalVis(true)
     APITaskDone(item.id).then(resp => {
       if (resp.code === 0) {
-        message.success(t('task_reward_message', {amount: item.profit, currency: formatUnitByCurrency(item.profitCurrency)}).replace(MAIN_CURRENCY_COIN, formatUnitByCurrency(item.profitCurrency)))
+        message.success(t('task_reward_message', { amount: item.profit, currency: formatUnitByCurrency(item.profitCurrency) }).replace(MAIN_CURRENCY_COIN, formatUnitByCurrency(item.profitCurrency)))
         if (link.indexOf('t.me') !== -1) {
           webApp.openTelegramLink(link)
         } else {
@@ -268,7 +345,7 @@ const Home = ()  => {
   }
 
   const fetchPrizePoolActivityData = () => {
-    APIActivityList({pageNo: 1, pageSize: 10}).then(resp => {
+    APIActivityList({ pageNo: 1, pageSize: 10 }).then(resp => {
       if (resp.code === 0) {
         if (resp.data.list.length > 0) {
           dispatch.setActivityState(resp.data.list[0])
@@ -430,274 +507,65 @@ const Home = ()  => {
         isDone: true
       }
     }
-    setTaskState({...taskStateNew})
+    setTaskState({ ...taskStateNew })
   }, [taskList]);
 
   return (
     <div className={styles.page}>
-      <div className={styles.header_wrap}>
-        <div className={styles.header_left_wrap}>
-          <span className={styles.user_text}>UID: {userAuthData.userId}</span>
-          <div className={styles.level_wrap}>Lv {userInfoData.level}</div>
+      <div className={styles.pageBox}>
+        <div className={styles.header}>
+          <p className={styles.title}>
+            NeuroX
+          </p>
+          <p className={styles.money}>
+            18888888
+          </p>
         </div>
-        <div className={styles.header_right_wrap}>
-          <div onClick={gotoLanguagePage} className={styles.language_icon}></div>
-        </div>
-      </div>
-      <div className={styles.gen_num_wrap}>
-        <div className={styles.gen_box}>
-          <div className={styles.coin_icon}></div>
-          <span className={styles.gen_balance_num}>{numberFormatToEnglish(miningState.miningAmount, 6)}</span>
-          <span className={styles.gen_util}>{MAIN_CURRENCY_COIN}</span>
-        </div>
-        <span className={styles.usdt_num}>={numberFormatToEnglish(miningState.miningAmount * rateGENToUSDT, 6)}USDT</span>
-      </div>
-      <div className={styles.coin_big_logo_wrap}>
-        <Lottie
-          options={lottieDefaultOptions}
-          isClickToPauseDisabled={true}
-        />
-        <div className={styles.rank_icon_box}>
-          <div onClick={() => navigate('/function')} className={styles.rank_icon}>
-            <Lottie
-              options={lottieRankOptions}
-              isClickToPauseDisabled={true}
-            />
-          </div>
-          <div className={styles.lucky_bag_hint_wrap}>{t('home_rank_icon_text')}<span className={styles.right_icon_l}></span></div>
-        </div>
-
-      </div>
-      <div className={styles.mining_wrap}>
-        <div className={styles.mining_num}>{numberFormatToEnglish(miningData.speed, 2)} {MAIN_CURRENCY_COIN} / H</div>
-        <div className={styles.mining_box}>
-          <div className={styles.mining_box_header}>
-            <div onClick={() => setRuleVis(true)} className={styles.info_icon}></div>
-          </div>
-          <div className={styles.mining_time_wrap}>
-            <div className={styles.time_left_line}></div>
-            <div className={styles.time_text}>{miningState.hours}H {miningState.minutes}M {miningState.seconds}S</div>
-            <div className={styles.time_right_line}></div>
-          </div>
-          <div className={styles.hint_text_wrap}>
-            <span>{t('home_leave_and_restart')}</span>
-          </div>
-          <div className={styles.mining_btn_wrap}>
-            <div onClick={onStartMiningClick} className={`${styles.start_mining_btn} ${miningData.status === 1 && styles.mining_in_btn} ${miningData.status === 2 && styles.rewards_btn}`}>
-              {
-                [0].includes(miningData.status) && t('home_start_mining_coins')
-              }
-              {
-                miningData.status === 1 && t('home_mining_in_progress')
-              }
-              {
-                miningData.status === 2 && t('home_game_rewards')
-              }
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className={styles.page_title}>{t('task_task_center')}</div>
-
-      <div className={styles.task_center_wrap}>
-
-        <div key={'task-key-joinGroup6'} className={styles.task_item_wrap}>
-          <div className={styles.icon_box}><img src={'/img/home/casmedia_icon.jpg'}/></div>
-          <div className={styles.center_content_wrap}>
-            <div className={styles.content_title}>Timelypurse</div>
-            <div
-              className={styles.content_hint_text}>Register now to
-              receive {taskState.timelypurse.profit} {formatUnitByCurrency(taskState.timelypurse.profitCurrency)}</div>
-          </div>
-          <div className={styles.right_content_wrap}>
-            {/*<div onClick={() => onJoinGroup(taskState.joinTGGroup)} className={`${styles.action_btn} ${taskState.joinTGGroup.isDone && styles.action_btn_inactive}`}>{taskState.joinTGGroup.isDone ? t('common_finish') : t('task_follow')}</div>*/}
-            <div onClick={() => onJoinGroup(taskState.timelypurse)}
-                 className={`${styles.action_btn}`}>Download
-            </div>
-            <div
-              className={styles.add_num}>+{taskState.timelypurse.profit} {formatUnitByCurrency(taskState.timelypurse.profitCurrency)}</div>
-          </div>
-        </div>
-
-        <div key={'task-key-joinGroup'} className={styles.task_item_wrap}>
-          <div className={styles.icon_box}><img src={'/img/home/follow_telegram_icon.png'}/></div>
-          <div className={styles.center_content_wrap}>
-            <div className={styles.content_title}>{t('task_join_group_title')}</div>
-            <div
-              className={styles.content_hint_text}>{t('task_join_group_sub_title', {amount: taskState.joinTGGroup.profit, currency: MAIN_CURRENCY_COIN})}</div>
-          </div>
-          <div className={styles.right_content_wrap}>
-            {/*<div onClick={() => onJoinGroup(taskState.joinTGGroup)} className={`${styles.action_btn} ${taskState.joinTGGroup.isDone && styles.action_btn_inactive}`}>{taskState.joinTGGroup.isDone ? t('common_finish') : t('task_follow')}</div>*/}
-            <div onClick={() => onJoinGroup(taskState.joinTGGroup)}
-                 className={`${styles.action_btn}`}>{t('task_follow')}</div>
-            <div className={styles.add_num}>+{taskState.joinTGGroup.profit} {MAIN_CURRENCY_COIN}</div>
-          </div>
-        </div>
-
-        <div key={'task-key-joinGroup3'} className={styles.task_item_wrap}>
-          <div className={styles.icon_box}><img src={'/img/home/meta_icon.jpg'}/></div>
-          <div className={styles.center_content_wrap}>
-            <div className={styles.content_title}>{t('home_task_fb_post_title', {currency: MAIN_CURRENCY_COIN})}</div>
-            <div className={styles.content_hint_text}>{t('home_task_fb_post_hint')}</div>
-          </div>
-          <div className={styles.right_content_wrap}>
-            {/*<div onClick={() => onJoinGroup(taskState.twitter)} className={`${styles.action_btn} ${taskState.twitter.isDone && styles.action_btn_inactive}`}>{taskState.twitter.isDone ? t('common_finish') : t('task_follow')}</div>*/}
-            <div onClick={() => onJoinGroup(taskState.meta)} className={`${styles.action_btn}`}>{t('task_follow')}</div>
-            <div className={styles.add_num}>+{taskState.meta.profit} {MAIN_CURRENCY_COIN}</div>
-          </div>
-        </div>
-
-        <div key={'task-key-joinGroup2'} className={styles.task_item_wrap}>
-          <div className={styles.icon_box}><img src={'/img/home/follow_facebook_icon.png'}/></div>
-          <div className={styles.center_content_wrap}>
-            <div className={styles.content_title}>{t('task_join_facebook_title', {currency: MAIN_CURRENCY_COIN})}</div>
-            <div className={styles.content_hint_text}>{t('task_join_facebook_sub_title')}</div>
-          </div>
-          <div className={styles.right_content_wrap}>
-            {/*<div onClick={() => onJoinGroup(taskState.facebook)} className={`${styles.action_btn} ${taskState.facebook.isDone && styles.action_btn_inactive}`}>{taskState.facebook.isDone ? t('common_finish') : t('task_follow')}</div>*/}
-            <div onClick={() => onJoinGroup(taskState.facebook)}
-                 className={`${styles.action_btn}`}>{t('task_follow')}</div>
-            <div className={styles.add_num}>+{taskState.facebook.profit} {MAIN_CURRENCY_COIN}</div>
-          </div>
-        </div>
-
-        <div key={'task-key-joinGroup4'} className={styles.task_item_wrap}>
-          <div className={styles.icon_box}><img src={'/img/home/follow_youtube_icon.png'}/></div>
-          <div className={styles.center_content_wrap}>
-            <div className={styles.content_title}>{t('task_join_youtube_title', {currency: MAIN_CURRENCY_COIN})}</div>
-            <div className={styles.content_hint_text}>{t('task_join_youtube_sub_title')}</div>
-          </div>
-          <div className={styles.right_content_wrap}>
-            {/*<div onClick={() => onJoinGroup(taskState.youtube)} className={`${styles.action_btn} ${taskState.youtube.isDone && styles.action_btn_inactive}`}>{taskState.youtube.isDone ? t('common_finish') : t('task_follow')}</div>*/}
-            <div onClick={() => onJoinGroup(taskState.youtube)}
-                 className={`${styles.action_btn}`}>{t('task_follow')}</div>
-            <div className={styles.add_num}>+{taskState.youtube.profit} {MAIN_CURRENCY_COIN}</div>
-          </div>
-        </div>
-
-        {
-          rewardTaskList.filter(key => key.type === 1).map((item) => (
-            <div key={'task-reward-key-' + item.id} className={styles.task_item_wrap}>
-              <div className={styles.icon_r_box}><img src={'./img/function/team.png'}/></div>
-              {/*<div className={styles.icon_box}><img src={'./img/home/task_invite_icon.png'}/> </div>*/}
-              <div className={styles.center_content_wrap}>
-                <div className={styles.content_title}>{t('invite_task_label1')}</div>
-                <div className={styles.content_hint_text}>
-                  <span className={styles.hint_left_text}>{t('invite_task_hint1')}</span>
-
-                </div>
-
-              </div>
-              <div className={`${styles.right_content_wrap} ${styles.right_r_content_wrap}`}>
+        <div className={styles.topIcons}>
+          {
+            homeIconList.map(iconItems => {
+              return <div className={styles.iconWrap}>
                 {
-                  teamStatePageData.totalCountLevel1 > item.referralCountA ? (
-                    <div onClick={() => {
-                      navigate('/teamPage')
-                    }} className={`${styles.action_btn} ${styles.action_btn_inactive}`}>{t('common_finish')}</div>
-                  ) : (
-                    <div onClick={() => {
-                      navigate('/teamPage')
-                    }} className={styles.action_btn}>{t('invite_invite')}</div>
-                  )
+                  iconItems.map(iconItem => {
+                    return <img onClick={() => iconItem.navigatePath && navigate(iconItem.navigatePath)}  className={styles.iconItem} src={iconItem.iconPath} alt="" />
+                  })
                 }
-                <div className={styles.add_num}>+{item.amount / 100} {MAIN_CURRENCY_COIN}</div>
               </div>
-              <div className={styles.invite_wrap}>
-                <span>{teamStatePageData.totalCountLevel1 ? teamStatePageData.totalCountLevel1 > item.referralCountA ? item.referralCountA : teamStatePageData.totalCountLevel1 : 0}/{item.referralCountA}</span>
-              </div>
-            </div>
-          ))
-        }
-
-        {
-          rewardTaskList.filter(key => key.type === 2).map((item) => (
-            <div key={'task-u_reward-key-' + item.id} className={styles.task_item_wrap}>
-              <div className={styles.icon_u_box}><img src={'/img/accelerate/action_1_icon.png'}/></div>
-              <div className={styles.center_content_wrap}>
-                <div className={styles.content_title}>{t('task_upgrade_title', {amount: item.upgrade})}</div>
-                <div className={styles.content_hint_text}>
-                  <span className={styles.hint_left_text}>{t('task_upgrade_hint_text')}</span>
-                  {/*<span className={styles.hint_right_text}>+{item.amount / 100} {MAIN_CURRENCY_COIN}</span>*/}
-                </div>
-              </div>
-              <div className={`${styles.right_content_wrap} ${styles.right_r_content_wrap}`}>
-                {
-                  userInfoData.level >= item.upgrade ? (
-                    <div onClick={() => {
-                      navigate('/accelerate', {state: {tabType: 2}})
-                    }} className={`${styles.action_btn} ${styles.action_btn_inactive}`}>{t('common_finish')}</div>
-                  ) : (
-                    <div onClick={() => {
-                      navigate('/accelerate', {state: {tabType: 2}})
-                    }} className={styles.action_btn}>{t('accelerate_upgrade')}</div>
-                  )
-                }
-                <div className={styles.add_num}>+{item.amount / 100} {MAIN_CURRENCY_COIN}</div>
-              </div>
-              <div className={styles.invite_wrap}>
-                <span>{userInfoData ? userInfoData.level > item.upgrade ? item.upgrade : userInfoData.level : 0}/{item.upgrade}</span>
-              </div>
-            </div>
-          ))
-        }
-
-
-        {/*<div key={'task-key-follow'} className={styles.task_item_wrap}>*/}
-        {/*  <div className={styles.icon_box}><img src={'./img/home/task_follow_icon.png'}/> </div>*/}
-        {/*  <div className={styles.center_content_wrap}>*/}
-        {/*    <div className={styles.content_title}>{t('task_item_follow_title')}</div>*/}
-        {/*    <div className={styles.content_hint_text}>{t('task_item_follow_label', {currency: MAIN_CURRENCY_COIN})}</div>*/}
-        {/*  </div>*/}
-        {/*  <div className={styles.right_content_wrap}>*/}
-        {/*    <div onClick={() => setFollowVis(true)} className={`${styles.action_btn} ${taskState.follow.isDone && styles.action_btn_inactive}`}>{taskState.follow.isDone ? t('follow_completed') : t('task_follow')}</div>*/}
-        {/*    <div className={styles.add_num}>+{taskState.follow.profit} {MAIN_CURRENCY_COIN}</div>*/}
-        {/*  </div>*/}
-        {/*</div>*/}
-
-        <div key={'task-key-check-in'} className={styles.task_item_wrap}>
-          <div className={styles.icon_box}><img src={'./img/home/task_sign_icon.png'}/></div>
-          <div className={styles.center_content_wrap}>
-            <div className={styles.content_title}>{t('task_item_sign_title')}</div>
-            <div className={styles.content_hint_text}>{t('task_item_sign_label')}</div>
-          </div>
-          <div className={styles.right_content_wrap}>
-            <div onClick={() => onSignInClick(taskState.dailyCheck)}
-                 className={`${styles.action_btn} ${taskState.dailyCheck.isDone && styles.action_btn_inactive}`}>{t('task_sign_in')}</div>
-            <div className={styles.add_num}>+{taskState.dailyCheck.profit} {MAIN_CURRENCY_COIN}</div>
-          </div>
+            })
+          }
         </div>
+        <div className={styles.miningFrequencyBox}>
+          <div className={styles.top}>
+            <div className={styles.leftSec}>
+              <img src="./img/home/mining-records-icon.png" alt="" />
+              <span>挖矿次数</span>
+              <p>5次/8h</p>
+            </div>
+            <div className={styles.btn}>Claim</div>
+          </div>
+          <div className={styles.progress}></div>
 
+        </div>
+        {/* 任务中心 */}
+        <div className={styles.task}>
+          <p className={styles.title}>任务中心</p>
+          {
+            taskListData.map(item => {
+              return (<div className={styles.box}>
+                <div className={styles.left}>
+                  <img src={item.iconPath} alt="" />
+                </div>
+                <div className={styles.center}>
+                  <p className={styles.title}>{item.title}</p>
+                  <p className={styles.desc}>{item.desc}</p>
+                </div>
+                <div className={styles.right}>Follow</div>
+              </div>)
+            })
+          }
+        </div>
       </div>
 
-      <div className={styles.sized_bottom_box}></div>
-
-
-      <FollowPopup open={followVis} onModalCloseHandle={() => {
-        setFollowVis(false)
-      }}/>
-
-      <Modal centered footer={null} closeIcon={false} open={ruleVis} onCancel={() => setRuleVis(false)}>
-        <div className={styles.modal_content}>
-
-          <div className={styles.title_wrap}>{t('home_mining_rules')}</div>
-
-          <div className={styles.content_text}>{t('home_mining_rules_hint')}</div>
-
-          <div onClick={() => setRuleVis(false)} className={styles.determine_btn}>{t('home_determine')}</div>
-        </div>
-      </Modal>
-      <Modal centered footer={null} closeIcon={false} open={downloadRewardVis} onCancel={() => setDownloadRewardVis(false)}>
-        <div className={styles.modal_content_2}>
-          <div className={styles.modal_content_2_box}>
-            <div className={styles.m_usdt_icon}></div>
-            <div className={styles.m_title}>{t('prize_pool_fill_congratulations')}</div>
-            <div className={styles.m_sub_title}>{t('home_task_timelypurse_hint_text')}</div>
-
-            <div className={styles.m_amount_text}>{numberFormatToEnglish(taskState.timelypurse.profit)} {formatUnitByCurrency(taskState.timelypurse.profitCurrency)}</div>
-
-          </div>
-        </div>
-      </Modal>
     </div>
   )
 }

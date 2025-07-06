@@ -13,7 +13,7 @@ const NavigateBar = () => {
 
   const [tabIndex, setTabIndex] = useState(0)
 
-  const whitePath = ['/', '/accelerate', '/minister', '/teamPage']
+  const whitePath = ['/','/wallet', '/accelerate', '/minister', '/teamPage']
 
   const lottieTabRocketOptions = {
     loop: true,
@@ -30,26 +30,21 @@ const NavigateBar = () => {
       path: '/',
       component: null,
     },
-    // {
-    //   key: 1,
-    //   name: 'tab_rank',
-    //   icon: './img/tab/tab_rank.png',
-    //   iconAc: './img/tab/tab_rank_ac.png',
-    //   path: '/function',
-    //   component: null
-    // },
+    {
+      key: 1,
+      name: 'tab_rank',
+      icon: './img/tab/tab_rank.png',
+      iconAc: './img/tab/tab_rank_ac.png',
+      path: '/function',
+      component: null
+    },
     {
       key: 2,
       name: 'tab_accelerate',
       icon: './img/tab/tab_accelerate.png',
       iconAc: './img/tab/tab_accelerate_ac.png',
       path: '/accelerate',
-      component: (
-        <Lottie
-          options={lottieTabRocketOptions}
-          isClickToPauseDisabled={true}
-        />
-      )
+      component: null
     },
     // {
     //   key: 3,
@@ -81,7 +76,7 @@ const NavigateBar = () => {
       name: 'tab_minister',
       icon: './img/tab/tab_wallet.png',
       iconAc: './img/tab/tab_wallet_ac.png',
-      path: '/minister',
+      path: '/wallet',
       component: null
     },
   ]

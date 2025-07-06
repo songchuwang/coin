@@ -136,9 +136,9 @@ const Minister = () => {
         <div className={styles.header_left_wrap}>
           <span className={styles.wallet_text}>{t('wallet_wallet')}</span>
         </div>
-        <div className={styles.header_right_wrap}>
+        {/* <div className={styles.header_right_wrap}>
           <div onClick={gotoLanguagePage} className={styles.language_icon}></div>
-        </div>
+        </div> */}
       </div>
 
       <div className={styles.gen_num_wrap}>

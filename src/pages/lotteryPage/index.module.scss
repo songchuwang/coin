@@ -1,0 +1,294 @@
+.lotteryPage {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #030B20;
+  color: white;
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  padding: 30px 0;
+  
+  h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #5ec9f4;
+    text-shadow: 0 0 20px rgba(94, 201, 244, 0.7);
+    margin: 0;
+  }
+}
+
+.wheelSection {
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: #011A30;
+  border-radius: 24px;
+  margin-bottom: 40px;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 16px;
+  height: 640px;
+  margin: 0 auto;
+  max-width: 680px;
+}
+
+.gridItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #0B2347;
+  border-radius: 16px;
+  border: 1px solid rgba(92, 141, 240, 0.3);
+  transition: all 0.3s ease;
+  .gift {
+    width: 128px;
+    height: 120px;
+  }
+}
+
+.active {
+  background: linear-gradient(135deg, rgba(249, 212, 35, 0.8), rgba(255, 106, 0, 0.8)) !important;
+  box-shadow: 0 0 30px rgba(249, 212, 35, 0.5);
+  transform: scale(0.98);
+}
+
+.chestIcon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.chestName {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.spinButton {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F9D423, #FF6A00);
+  border: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(249, 212, 35, 0.5);
+}
+
+.spinButton:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(249, 212, 35, 0.7);
+}
+
+.spinButton:disabled {
+  background: #444;
+  color: #777;
+  cursor: not-allowed;
+}
+
+.spinning {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(249, 212, 35, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(249, 212, 35, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(249, 212, 35, 0);
+  }
+}
+
+.balanceInfo {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: #011A30;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.balance, .drawTimes {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  color: #5EC9F4;
+  margin-right: 10px;
+}
+
+.value {
+  color: #F9D423;
+  font-weight: bold;
+}
+
+.historySection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #011A30;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1.5fr;
+  padding: 24px 20px;
+  background: rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+}
+
+.headerCell {
+  text-align: center;
+}
+
+.tableBody {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1.5fr;
+  padding: 20px;
+  border-bottom: 2px solid rgba(92, 141, 240, 0.2);
+}
+
+.bodyCell {
+  text-align: center;
+  padding: 10px;
+  font-size: 28px;
+}
+
+.prizeCell {
+  color: #F9D423;
+  font-weight: 600;
+}
+
+.resultOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.resultModal {
+  width: 560px;
+  padding: 30px;
+  background: linear-gradient(135deg, #0B2347, #011A30);
+  border-radius: 32px;
+  text-align: center;
+  box-shadow: 0 0 60px rgba(94, 201, 244, 0.5);
+}
+
+.resultModal h2 {
+  color: #F9D423;
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+.prizeValue {
+  font-size: 56px;
+  font-weight: bold;
+  color: #FF6A00;
+  margin: 40px 0;
+  text-shadow: 0 0 20px rgba(255, 106, 0, 0.5);
+}
+
+.resultInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  color: #5EC9F4;
+  font-size: 28px;
+}
+
+.confirmButton {
+  width: 100%;
+  padding: 24px;
+  background: linear-gradient(135deg, #F9D423, #FF6A00);
+  border: none;
+  border-radius: 50px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.confirmButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* 媒体查询 - 确保在375px设备上完美显示 */
+@media screen and (max-width: 420px) {
+  .lotteryPage {
+    min-height: 100vh;
+    max-width: 100%;
+    padding: 30px 16px;
+  }
+  
+  .header h1 {
+    font-size: 44px;
+  }
+  
+  .gridContainer {
+    height: 600px;
+  }
+  
+  .chestName {
+    font-size: 24px;
+  }
+  
+  .spinButton {
+    width: 160px;
+    height: 160px;
+    font-size: 30px;
+  }
+  
+  .balanceInfo {
+    padding: 24px;
+    font-size: 28px;
+  }
+  
+  .tableHeader {
+    padding: 20px;
+  }
+  
+  .tableRow {
+    padding: 16px 10px;
+  }
+}

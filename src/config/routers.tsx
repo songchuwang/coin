@@ -16,6 +16,10 @@ import BillPage from "@/pages/billPage";
 import TeamRecordPage from "@/pages/teamRecordPage";
 import InvitePage from "@/pages/invitePage";
 import IntroductionPage from "@/pages/introductionPage";
+import Wallet from "@/pages/wallet";
+import LotteryPage from "@/pages/lotteryPage";
+import MiningRecords from "@/pages/miningRecords";
+
 import DevRouterPage from "@/pages/devRouterPage";
 import TokenAllocationPage from "@/pages/tokenAllocationPage";
 import ProblemFeedbackPage from "@/pages/problemFeedbackPage";
@@ -109,6 +113,18 @@ export default [
   {
     path: '/introductionPage',
     element: <IntroductionPage />
+  },
+  {
+    path: '/wallet',
+    element: <Wallet />
+  },
+  {
+    path: '/lotteryPage',
+    element: <LotteryPage />
+  },
+  {
+    path: '/miningRecords',
+    element: <MiningRecords />
   },
   {
     path: '/devRouterPage',

@@ -48,9 +48,9 @@ function AppRouters () {
   const initTGBackL = () => {
     const webApp = getTelegramWebApp()
     if (whiteList.includes(location.pathname)) {
-      webApp.BackButton.hide();
+      webApp.BackButton?.hide();
     } else {
-      webApp.BackButton.show()
+      webApp.BackButton?.show()
     }
   }
 
@@ -86,29 +86,32 @@ function App() {
   const onUserLogin = async () => {
     // setLoading(true)
     dispatch.setInitLoading(true)
-    const tgUser = getTelegramUserData()
-    // const tgUser = {
-    //   id: 1224383828,
-    //   first_name: 'Hu',
-    //   last_name: 'Robert',
-    //   username: 'roberthucode',
-    // }
+    // const tgUser = getTelegramUserData()
+    const tgUser = {
+      id: 1224383828,
+      first_name: 'Hu',
+      last_name: 'Robert',
+      username: 'roberthucode',
+    }
+    console.log('小程序id:', tgUser);
+    
     const tgId = localStorage.getItem('tgId')
-    if (tgUser.id.toString() !== tgId) {
+    if (tgUser?.id.toString() !== tgId) {
       localStorage.clear()
     }
-    localStorage.setItem('tgId', tgUser.id.toString())
+    localStorage.setItem('tgId', tgUser?.id.toString())
     const webApp = getTelegramWebApp()
     console.log(webApp)
     const userParams: LoginParamsType = {
-      miniId: tgUser.id,
+      miniId: tgUser?.id,
       // firstName: tgUser.first_name,
       // lastName: tgUser.last_name,
-      username: tgUser.username,
+      username: tgUser?.username,
       avatar: '',
       password: '0027rootss',
       // referralCode: '',
-      initData: webApp.initData
+      // initData: webApp.initData
+      initData: 'songchuwang test'
     }
 
     let pageLoading = true
