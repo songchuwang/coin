@@ -13,7 +13,7 @@ const NavigateBar = () => {
 
   const [tabIndex, setTabIndex] = useState(0)
 
-  const whitePath = ['/','/wallet', '/accelerate', '/minister', '/teamPage']
+  const whitePath = ['/','/wallet','/ranking', '/accelerate', '/minister','/miningMachine', '/teamPage']
 
   const lottieTabRocketOptions = {
     loop: true,
@@ -24,26 +24,26 @@ const NavigateBar = () => {
   const navigateList = [
     {
       key: 0,
-      name: 'tab_home',
-      icon: './img/tab/tab_home.png',
-      iconAc: './img/tab/tab_home_ac.png',
+      name: 'Home',
+      icon: './img/n_tab/tab_home.png',
+      iconAc: './img/n_tab/tab_home_ac.png',
       path: '/',
       component: null,
     },
     {
       key: 1,
-      name: 'tab_rank',
-      icon: './img/tab/tab_rank.png',
-      iconAc: './img/tab/tab_rank_ac.png',
-      path: '/function',
+      name: 'Activity',
+      icon: './img/n_tab/tab_events.png',
+      iconAc: './img/n_tab/tab_events_ac.png',
+      path: '/accelerate',
       component: null
     },
     {
       key: 2,
-      name: 'tab_accelerate',
-      icon: './img/tab/tab_accelerate.png',
-      iconAc: './img/tab/tab_accelerate_ac.png',
-      path: '/accelerate',
+      name: 'Rank',
+      icon: './img/n_tab/tab_rank.png',
+      iconAc: './img/n_tab/tab_rank_ac.png',
+      path: '/ranking',
       component: null
     },
     // {
@@ -61,24 +61,25 @@ const NavigateBar = () => {
     //   path: '/nodeList'
     // },
     {
-      key: 5,
-      // name: 'Team',
-      name: 'earn_earn',
-      // icon: './img/tab/tab_team.png',
-      // iconAc: './img/tab/tab_team_ac.png',
-      icon: './img/tab/tab_earn.png',
-      iconAc: './img/tab/tab_earn_ac.png',
-      path: '/teamPage',
+      key: 3,
+      name: 'Wallet',
+      icon: './img/n_tab/tab_wallet.png',
+      iconAc: './img/n_tab/tab_wallet_ac.png',
+      path: '/wallet',
       component: null
     },
     {
       key: 4,
-      name: 'tab_minister',
-      icon: './img/tab/tab_wallet.png',
-      iconAc: './img/tab/tab_wallet_ac.png',
-      path: '/wallet',
+      // name: 'Team',
+      name: 'Miner',
+      // icon: './img/tab/tab_team.png',
+      // iconAc: './img/tab/tab_team_ac.png',
+      icon: './img/n_tab/tab_miner.png',
+      iconAc: './img/n_tab/tab_miner_ac.png',
+      path: '/miningMachine',
       component: null
     },
+    
   ]
 
   const navigate = useNavigate()

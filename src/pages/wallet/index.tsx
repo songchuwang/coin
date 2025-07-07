@@ -1,5 +1,6 @@
 import styles from "./index.module.scss"
 import PageHeader from '../../components/PageHeader';
+import { useNavigate } from "react-router-dom";
 
 const walletList = [
     {
@@ -30,13 +31,13 @@ const walletList = [
         key: 4,
         name: 'Recharge',
         iconPath: './img/wallet/recharge.png',
-        navigatePath: ''
+        navigatePath: '/wallet/newRecharge'
     },
     {
         key: 5,
         name: 'Withdraw',
         iconPath: './img/wallet/withdraw.png',
-        navigatePath: ''
+        navigatePath: '/wallet/newWithdraw'
     },
     {
         key: 6,
@@ -54,10 +55,11 @@ const walletList = [
         key: 8,
         name: 'GEN&USDT',
         iconPath: './img/wallet/gen&usdt.png',
-        navigatePath: ''
+        navigatePath: '/swapCurrency'
     },
 ]
 const Wallet = () => {
+    const navigate = useNavigate()
     return (
         <div className={styles.page}>
             <p className={styles.header}>钱包</p>
@@ -69,10 +71,12 @@ const Wallet = () => {
             <div className={styles.list}>
                 {
                     walletList.map(item => {
-                        return (<div className={styles.listitem}>
+                        return <div onClick={() => {
+                            return item.navigatePath && navigate(item.navigatePath)
+                        }} className={styles.listitem}>
                             <img src={item.iconPath} alt="" />
                             <span>{item.name}</span>
-                        </div>)
+                        </div>
                     })
                 }
             </div>

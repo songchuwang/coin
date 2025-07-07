@@ -1,0 +1,53 @@
+.page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #030B20;
+    padding-top: 14px;
+    box-sizing: border-box;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    .header {
+        width: 100%;
+        background-color: #011A30;
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
+        height: 88px;
+        display: flex;
+        flex-direction: row;
+        padding-left: 88px;
+        padding-top: 16px;
+        padding-right: 54px;
+        justify-content: space-between;
+        align-items: center;
+
+        >div {
+            color: #08EEFD;
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 72px;
+            text-align: center;
+        }
+
+        .rankingIndex {
+            width: 70px;
+        }
+
+        .userName {
+            width: 70px;
+        }
+
+        .rankingNeuroX {
+            width: 150px;
+        }
+    }
+
+    .listItem {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        &:last-child {
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+        }
+    }
+}

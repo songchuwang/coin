@@ -6,7 +6,13 @@ import Minister from "@/pages/minister";
 import LanguagePage from "@/pages/languagePage";
 import CoinBalance from "@/pages/coinBalance";
 import Recharge from "@/pages/recharge";
+import NewRecharge from "@/pages/newRecharge";
+import NewWithdraw from "@/pages/newWithdraw";
 import Withdraw from "@/pages/withdraw";
+import MiningMachine from "@/pages/miningMachine";
+import MyMiningMachine from "@/pages/myMiningMachine";
+import SwapCurrency from "@/pages/swapCurrency";
+
 import WithdrawRecord from "@/pages/withdrawRecord";
 import UpdateAccount from "@/pages/updateAccount";
 import TeamPage from "@/pages/teamPage";
@@ -18,6 +24,7 @@ import InvitePage from "@/pages/invitePage";
 import IntroductionPage from "@/pages/introductionPage";
 import InviteDetail from "@/pages/inviteDetail";
 import InviteNewPage from "@/pages/inviteNewPage";
+import Ranking from "@/pages/ranking";
 import Wallet from "@/pages/wallet";
 import LotteryPage from "@/pages/lotteryPage";
 import MiningRecords from "@/pages/miningRecords";
@@ -48,21 +55,21 @@ import MarketSwapPage from "@/pages/marketSwapPage";
 export default [
   {
     path: '/',
-    element: <Home/>,
+    element: <Home />,
     exact: true,
     fallback: <div>Loading</div>
   },
   {
     path: '/accelerate',
-    element: <Accelerate/>,
+    element: <Accelerate />,
   },
   {
     path: '/function',
-    element: <Function/>,
+    element: <Function />,
   },
   {
     path: '/minister',
-    element: <Minister/>,
+    element: <Minister />,
   },
   {
     path: '/languagePage',
@@ -75,6 +82,26 @@ export default [
   {
     path: '/recharge',
     element: <Recharge />
+  },
+  {
+    path: '/wallet/newRecharge',
+    element: <NewRecharge />
+  },
+  {
+    path: '/wallet/newWithdraw',
+    element: <NewWithdraw />
+  },
+  {
+    path: '/miningMachine',
+    element: <MiningMachine />
+  },
+  {
+    path: '/swapCurrency',
+    element: <SwapCurrency />
+  },
+  {
+    path: '/miningMachine/myMiningMachine',
+    element: <MyMiningMachine />
   },
   {
     path: '/withdraw',
@@ -123,6 +150,10 @@ export default [
   {
     path: '/inviteNewPage',
     element: <InviteNewPage />
+  },
+  {
+    path: '/ranking',
+    element: <Ranking />
   },
   {
     path: '/wallet',

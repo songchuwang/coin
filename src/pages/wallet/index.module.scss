@@ -5,6 +5,8 @@
     box-sizing: border-box;
     padding-left: 32px;
     padding-right: 32px;
+    position: relative;
+   
 
     .header {
         margin: 0;
@@ -60,8 +62,10 @@
         justify-content: space-between;
         margin-top: 32px;
         margin-bottom: 16px;
+        z-index: 999;
 
         .listitem {
+            z-index: 99999;
             width: 207px;
             height: 150px;
             border-radius: 24px;

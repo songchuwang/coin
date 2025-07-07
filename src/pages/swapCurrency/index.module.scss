@@ -1,0 +1,99 @@
+.page {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 100px;
+    background-color: #030B20;
+    min-height: 100vh;
+
+    .swapIcon {
+        width: 100%;
+        height: 44px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        img {
+            width: 44px;
+            height: 44px;
+        }
+    }
+
+    .title {
+        font-weight: 400;
+        font-size: 28px;
+        color: #ffffff;
+    }
+
+    .fromBox {
+        margin-top: 20px;
+        width: 100%;
+        height: 166px;
+        border-radius: 24px;
+        box-sizing: border-box;
+        padding: 32px;
+        border: 1px solid transparent;
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+        background-image:
+            linear-gradient(rgba(1, 26, 48, 0.8), rgba(1, 26, 48, 0.8)),
+            /* 内部背景 */
+            linear-gradient(to bottom,
+                rgba(10, 194, 215, 0.4),
+                rgba(39, 137, 155, 0.4));
+        
+        .fromTxt {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 28px;
+            display: inline-block;
+            font-weight: 400;
+            position: relative;
+            margin-top: -8px;
+            margin-bottom: 8px;
+        }
+        .fromContent {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .iconText {
+                display: flex;
+            flex-direction: row;
+            align-items: center;
+                img {
+                    width: 54px;
+                    height: 54px;
+                }
+                span {
+                    font-size: 28px;
+                    margin-left: 16px;
+                    color: #ffffff;
+                }
+            }
+            .balance {
+                font-size: 28px;
+                color: #ffffff;
+            }
+            .allBtn {
+                font-weight: 400;
+                font-size: 28px;
+                color: #09C2DC;
+            }
+        }
+    }
+    .commissionBox {
+        display: flex;
+        width: 100%;
+        margin-top: 42px;
+        box-sizing: border-box;
+        padding-left: 56px;
+        flex-direction: row;
+        justify-content: space-between;
+        span {
+            font-size: 24px;
+            color: #ffffff;
+        }
+    }
+}
