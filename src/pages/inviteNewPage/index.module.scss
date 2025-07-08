@@ -172,6 +172,7 @@
 /* Tab样式 - 修正渐变背景 */
 .tabsWrapper {
     padding: 24px 0 16px;
+    width: 100%;
     height: 88px;
     box-sizing: border-box;
 }
@@ -311,12 +312,7 @@
     }
 }
 
-@media (min-width: 420px) {
-    .container {
-        max-width: 420px;
-        margin: 0 auto;
-    }
-}
+
 
 /* 切换动画效果 */
 .tabContent {

@@ -4,7 +4,8 @@
     padding-left: 32px;
     padding-right: 32px;
     padding-top: 32px;
-    background-color: #030B20;
+    // background-color: #030B20;
+    background-color: #011A30;
     min-height: 100vh;
 }
 
@@ -12,7 +13,7 @@
 .content {
     width: 100%;
     border-radius: 24px;
-    height: 600px;
+    // height: 600px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -21,12 +22,12 @@
     box-sizing: border-box;
     margin-bottom: 32px;
     padding-top: 40px;
+    background-color: #011A30;
     border: 1px solid transparent;
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
     background-image:
-        linear-gradient(rgba(1, 26, 48, 0.8), rgba(1, 26, 48, 0.8)),
-        /* 内部背景 */
+        linear-gradient(#011A30, #011A30),
         linear-gradient(to bottom,
             rgba(10, 194, 215, 0.4),
             rgba(39, 137, 155, 0.4));
@@ -51,10 +52,6 @@
             position: relative;
             margin-left: 54px;
             margin-top: 38px;
-            // position: absolute;
-            // left: 50%;
-            // top: 50%;
-            // margin-top: -20px;
             width: 40px;
             height: 40px;
         }
@@ -84,7 +81,6 @@
 
     .bnbBox {
         opacity: 0.5;
-        // background: rgba(10, 197, 222, 0.4);
         background: linear-gradient(to left, #0290B5 100%);
         border-radius: 8px;
         height: 32px;
@@ -160,5 +156,211 @@
         font-size: 24px;
         line-height: 24px;
         margin-top: 56px;
+    }
+}
+
+/* CryptoWithdrawForm.module.scss */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    padding: 20px;
+}
+
+.formContainer {
+    // width: calc(100% - 2px);
+    width: 100%;
+    // background-color: #0d1a3d;
+    background-color: #011A30;
+    border-radius: 12px;
+    padding: 32px;
+    // box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    background-image:
+        linear-gradient(#011A30, #011A30),
+        linear-gradient(to bottom,
+            rgba(10, 194, 215, 0.4),
+            rgba(39, 137, 155, 0.4));
+    //    .ant-input {
+    //     background-color: red !important;
+    //   }
+}
+
+.formItem {
+    margin-bottom: 54px;
+    position: relative;
+
+    :global {
+        input {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            height: 88px;
+            color: rgba(255, 255, 255, 0.5);
+            border: 1px solid transparent;
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+            background-image:
+                linear-gradient(rgba(1, 26, 48, 0.8), rgba(1, 26, 48, 0.8)),
+                /* 内部背景 */
+                linear-gradient(to bottom,
+                    rgba(10, 194, 215, 0.4),
+                    rgba(39, 137, 155, 0.4));
+            font-size: 24px;
+            // padding-left: 22px;
+
+        }
+        .ant-btn-primary:hover, .ant-btn-primary:focus {
+                                background: linear-gradient(to left, #0AC5DE 0%, #0290B5 100%);
+
+        }
+        .ant-btn {
+            border: none;
+            height: 88px;
+            border-radius: 20px;
+            font-size: 34px;
+                    background: linear-gradient(to left, #0AC5DE 0%, #0290B5 100%);
+
+        }
+    }
+    .allMountBtn {
+        position: absolute;
+        color: #09C2DC;
+        font-size: 24px;
+        height: 24px;
+        line-height: 24px;
+        display: inline-block;
+        width: 60px;
+        top: 50%;
+        right: 32px;
+        margin-top: -12px;
+    }
+}
+
+.formLabel {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.addressInput,
+.networkSelect,
+.amountInput {
+    width: 100%;
+    height: 88px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid #31467e;
+    border-radius: 24px;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 12px 16px;
+
+
+
+    &:hover {
+        border-color: #4d79ff;
+    }
+
+    &:focus {
+        border-color: #4d79ff;
+        box-shadow: 0 0 0 2px rgba(77, 121, 255, 0.2);
+    }
+}
+
+.amountContainer {
+    display: flex;
+    gap: 12px;
+}
+
+.amountInput {
+    flex: 1;
+}
+
+.tokenSymbol {
+    color: #a0aec0;
+    font-size: 16px;
+}
+
+.maxButton {
+    background-color: #1890ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    height: 48px;
+    font-size: 16px;
+    padding: 0 20px;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: #40a9ff;
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+.actualAmountContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.actualAmountInput {
+    height: 48px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #31467e;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 12px;
+    pointer-events: none;
+}
+
+.leftInput {
+    width: 32%;
+}
+
+.centerInput {
+    width: 20%;
+}
+
+.rightInput {
+    width: 32%;
+}
+
+.operator {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.resultInput {
+    color: #52c41a;
+    font-weight: 600;
+    background-color: rgba(82, 196, 26, 0.05);
+}
+
+.submitButton {
+    background-color: #13c2c2;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    height: 88px;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(19, 194, 194, 0.2);
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: #36cfc9;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(19, 194, 194, 0.3);
+    }
+
+    &:active {
+        transform: translateY(0);
     }
 }

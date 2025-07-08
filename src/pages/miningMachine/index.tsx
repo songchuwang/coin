@@ -10,12 +10,12 @@ const handleBack = () => {
 const MiningMachine = () => {
     const navigate = useNavigate()
     return (<>
-        <PageHeader
+        {/* <PageHeader
             onBack={handleBack}
             title="矿机"
             backgroundColor="#030B20"
             textColor="white"
-        />
+        /> */}
         <div className={styles.page}>
             
             <img className={styles.poster} src="../img/miner/poster.png" alt="" />

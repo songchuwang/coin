@@ -13,13 +13,13 @@ const NavigateBar = () => {
 
   const [tabIndex, setTabIndex] = useState(0)
 
-  const whitePath = ['/','/wallet','/ranking', '/accelerate', '/minister','/miningMachine', '/teamPage']
+  const whitePath = ['/','/wallet','/ranking', '/lotteryPage', '/minister','/miningMachine', '/teamPage']
 
   const lottieTabRocketOptions = {
     loop: true,
     autoplay: true,
     animationData: tabRocketAnimation,
-  }
+}
 
   const navigateList = [
     {
@@ -35,7 +35,7 @@ const NavigateBar = () => {
       name: 'Activity',
       icon: './img/n_tab/tab_events.png',
       iconAc: './img/n_tab/tab_events_ac.png',
-      path: '/accelerate',
+      path: '/lotteryPage',
       component: null
     },
     {
