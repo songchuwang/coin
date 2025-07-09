@@ -37,20 +37,23 @@ const Ranking = () => {
             textColor="white"
         />
         <div className={styles.page}>
-            <div className={styles.header}>
-                <div className={styles.rankingIndex}>排名</div>
-                <div className={styles.userName}>用户</div>
-                <div className={styles.rankingNeuroX}>NeuroX排</div>
+            <div className={styles.box}>
+                <div className={styles.header}>
+                    <div className={styles.rankingIndex}>排名</div>
+                    <div className={styles.userName}>用户</div>
+                    <div className={styles.rankingNeuroX}>NeuroX排</div>
+                </div>
+                {
+                    dataList.map(item => {
+                        return (<div className={`${styles.header} ${styles.listItem}`}>
+                            <div className={styles.rankingIndex}>{item.ranking}</div>
+                            <div className={styles.userName}>{item.userName}</div>
+                            <div className={styles.rankingNeuroX}>{item.rankingNeuroX}</div>
+                        </div>)
+                    })
+                }
             </div>
-            {
-                dataList.map(item => {
-                    return (<div className={`${styles.header} ${styles.listItem}`}>
-                        <div className={styles.rankingIndex}>{item.ranking}</div>
-                        <div className={styles.userName}>{item.userName}</div>
-                        <div className={styles.rankingNeuroX}>{item.rankingNeuroX}</div>
-                    </div>)
-                })
-            }
+
         </div>
     </>)
 }

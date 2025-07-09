@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './index.module.scss';
 import PageHeader from "../../components/PageHeader";
+import { useNavigate } from "react-router-dom";
 const handleBack = () => {
     window.history.back();
     // 或使用路由导航: navigate(-1) (react-router v6)
@@ -14,6 +15,8 @@ const LotteryPage = () => {
         { id: 4, time: "16/06 14:16", username: "@IHUADONG", prize: "XCON*2" },
         { id: 5, time: "16/06 14:16", username: "@IHUADONG", prize: "XCON*2" }
     ]);
+
+    const navigate = useNavigate()
 
     const [balance, setBalance] = useState(18888);
     const [remaining, setRemaining] = useState(188);
@@ -141,7 +144,7 @@ const LotteryPage = () => {
             // 第5个位置（索引4）是抽奖按钮
             if (i === 4) {
                 gridItems.push(
-                    <div key="spin-button" className={styles.gridItem}>
+                    <div key="spin-button" className={`${styles.gridItem} ${styles.instantLotteryDraw}`}>
                         <button
                             className={`${styles.spinButton} ${isSpinning ? styles.spinning : ''}`}
                             onClick={startSpin}
@@ -176,12 +179,12 @@ const LotteryPage = () => {
 
     return (
         <>
-            <PageHeader
+            {/* <PageHeader
                 title=""
                 onBack={handleBack}
                 backgroundColor="#030B20"
                 textColor="white"
-            />
+            /> */}
             <div className={styles.lotteryPage}>
                 {/* 顶部标题 */}
                 <div className={styles.header}>
@@ -192,21 +195,23 @@ const LotteryPage = () => {
                 <div className={styles.wheelSection}>
                     <div className={styles.gridContainer}>
                         {renderGrid()}
+
+                    </div>
+                    {/* 积分和次数显示 */}
+                    <div className={styles.balanceInfo}>
+                        <div className={styles.balance}>
+                            <span className={styles.label}>积分余额:</span>
+                            <span className={styles.value}>{balance}</span>
+                        </div>
+                        <div className={styles.drawTimes}>
+                            <span className={styles.label}>还可抽取</span>
+                            <span className={styles.value}>{remaining}</span>
+                            <span className={styles.label}>次</span>
+                        </div>
                     </div>
                 </div>
 
-                {/* 积分和次数显示 */}
-                <div className={styles.balanceInfo}>
-                    <div className={styles.balance}>
-                        <span className={styles.label}>积分余额:</span>
-                        <span className={styles.value}>{balance}</span>
-                    </div>
-                    <div className={styles.drawTimes}>
-                        <span className={styles.label}>还可抽取</span>
-                        <span className={styles.value}>{remaining}</span>
-                        <span className={styles.label}>次</span>
-                    </div>
-                </div>
+
 
                 {/* 抽奖记录 */}
                 <div className={styles.historySection}>
@@ -225,7 +230,15 @@ const LotteryPage = () => {
                         ))}
                     </div>
                 </div>
+
+                <div className={styles.btns}>
+                    <div onClick={()=>navigate('/lotteryRules')} className={styles.btnItem}>
+                        抽奖规则
+                    </div>
+                    <div onClick={()=>navigate('/lotteryRecords')} className={styles.btnItem}>抽奖记录</div>
+                </div>
                 
+
 
                 {/* 结果弹窗 */}
                 {showResult && (

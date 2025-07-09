@@ -1,0 +1,55 @@
+.lotteryPage {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-left: 32px;
+    padding-right: 32px;
+    background-color: #030B20;
+
+    .recordItem {
+        width: 100%;
+        position: relative;
+        box-sizing: border-box;
+        padding: 32px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        border: 1px solid rgba(8, 238, 253, 0.4);
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+        background-image:
+            linear-gradient(rgba(1, 26, 48, 0.9), rgba(1, 26, 48, 0.9)),
+            linear-gradient(to bottom,
+                rgba(10, 194, 215, 0.4),
+                rgba(39, 137, 155, 0.4));
+        border-radius: 24px;
+
+        img {
+            width: 90px;
+            height: 90px;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 24px;
+            .project {
+                color: #ffffff;
+                font-size: 34px;
+            }
+            .time {
+                font-size: 24px;
+                color: rgba(255, 255, 255, 0.5);
+            }
+        }
+        .tips {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 400;
+            position: absolute;
+            right: 32px;
+        }
+    }
+}

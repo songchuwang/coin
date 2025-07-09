@@ -24,9 +24,12 @@ import InvitePage from "@/pages/invitePage";
 import IntroductionPage from "@/pages/introductionPage";
 import InviteDetail from "@/pages/inviteDetail";
 import InviteNewPage from "@/pages/inviteNewPage";
+import LotteryRules from "@/pages/lotteryRules";
 import Ranking from "@/pages/ranking";
 import Wallet from "@/pages/wallet";
 import LotteryPage from "@/pages/lotteryPage";
+import LotteryRecords from "@/pages/lotteryRecords";
+
 import MiningRecords from "@/pages/miningRecords";
 
 import DevRouterPage from "@/pages/devRouterPage";
@@ -150,6 +153,14 @@ export default [
   {
     path: '/inviteNewPage',
     element: <InviteNewPage />
+  },
+  {
+    path: '/lotteryRules',
+    element: <LotteryRules />
+  },
+  {
+    path: '/lotteryRecords',
+    element: <LotteryRecords />
   },
   {
     path: '/ranking',
