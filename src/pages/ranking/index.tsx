@@ -6,25 +6,25 @@ const dataList = [
     {
         id: 1,
         ranking: 1,
-        userName: 'scw',
+        userName: 'xxxxx',
         rankingNeuroX: 13244
     },
     {
         id: 2,
         ranking: 2,
-        userName: 'scw2',
+        userName: 'xxxxx2',
         rankingNeuroX: 13244
     },
     {
         id: 3,
         ranking: 3,
-        userName: 'scw3',
+        userName: 'xxxxx3',
         rankingNeuroX: 13244
     },
     {
         id: 4,
         ranking: 4,
-        userName: 'scw4',
+        userName: 'xxxxx4',
         rankingNeuroX: 13244
     },
 ]

@@ -111,7 +111,7 @@ function App() {
       password: '0027rootss',
       // referralCode: '',
       // initData: webApp.initData
-      initData: 'songchuwang test'
+      initData: 'project test'
     }
 
     let pageLoading = true

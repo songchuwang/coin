@@ -59,7 +59,7 @@ const InviteTeamPage = () => {
                         <img className={styles.img} src="../img/invite_detail_item.png" alt="" />
                         <img className={styles.img} src="../img/people.png" alt="" />
                         <div className={styles.userInfo}>
-                            <span className={styles.name}>@songchuwang</span>
+                            <span className={styles.name}>@project</span>
                             <span className={styles.date}>2025/06/12</span>
                         </div>
                         <span className={styles.totalNum}>15000人</span>
@@ -68,7 +68,7 @@ const InviteTeamPage = () => {
                         <img className={styles.img} src="../img/invite_detail_item.png" alt="" />
                         <img className={styles.img} src="../img/people.png" alt="" />
                         <div className={styles.userInfo}>
-                            <span className={styles.name}>@songchuwang</span>
+                            <span className={styles.name}>@project</span>
                             <span className={styles.date}>2025/06/12</span>
                         </div>
                         <span className={styles.totalNum}>15000人</span>
@@ -77,7 +77,7 @@ const InviteTeamPage = () => {
                         <img className={styles.img} src="../img/invite_detail_item.png" alt="" />
                         <img className={styles.img} src="../img/people.png" alt="" />
                         <div className={styles.userInfo}>
-                            <span className={styles.name}>@songchuwang</span>
+                            <span className={styles.name}>@project</span>
                             <span className={styles.date}>2025/06/12</span>
                         </div>
                         <span className={styles.totalNum}>15000人</span>
@@ -86,7 +86,7 @@ const InviteTeamPage = () => {
                         <img className={styles.img} src="../img/invite_detail_item.png" alt="" />
                         <img className={styles.img} src="../img/people.png" alt="" />
                         <div className={styles.userInfo}>
-                            <span className={styles.name}>@songchuwang</span>
+                            <span className={styles.name}>@project</span>
                             <span className={styles.date}>2025/06/12</span>
                         </div>
                         <span className={styles.totalNum}>15000人</span>
